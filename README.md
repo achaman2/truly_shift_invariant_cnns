@@ -20,5 +20,5 @@ python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consi
 <b> APS ResNet models: </b>  'resnet20_aps', 'resnet56_aps', 'resnet18_aps', 'resnet50_aps' 
 
 
-The results would be saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
+The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
 
