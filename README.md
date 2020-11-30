@@ -13,11 +13,9 @@ To run our implementation use the following command
 ```
 python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consistency --seed_num 0 --device_id 0 --model_folder CURRENT_MODEL_DIRECTORY --results_root_path ROOT_DIRECTORY  
 ```
-```--data_augmentation_flag``` can be used to additionally train the networks with randomly shifted images. FILTER_SIZE can take the values between 1 to 7. The following CNN architectures are currently supported:\
+```--data_augmentation_flag``` can be used to additionally train the networks with randomly shifted images. FILTER_SIZE can take the values between 1 to 7. The list of CNN architectures currently supported can be found [here](supported_architectures.txt).
 
-<b>Vanila ResNet models:</b>  'resnet20', 'resnet56', 'resnet18', 'resnet50'\
-<b> LPF ResNet models: </b>  'resnet20_lpf', 'resnet56_lpf', 'resnet18_lpf', 'resnet50_lpf' \
-<b> APS ResNet models: </b>  'resnet20_aps', 'resnet56_aps', 'resnet18_aps', 'resnet50_aps' 
+
 
 
 The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
