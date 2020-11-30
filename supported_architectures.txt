@@ -1,0 +1,12 @@
+Vanila ResNet models: 
+'resnet20', 'resnet56', 'resnet18', 'resnet50'
+
+LPF ResNet models: 
+'resnet20_lpf', 'resnet56_lpf', 'resnet18_lpf', 'resnet50_lpf' 
+
+APS ResNet models: 
+'resnet20_aps', 'resnet56_aps', 'resnet18_aps', 'resnet50_aps'
+
+Depending upon the chosen blur filter size, APS models can combine APS with anti-aliasing. LPF models, on the other hand, only use anti-aliasing to improve robustness.
+
+
