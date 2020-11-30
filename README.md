@@ -5,7 +5,7 @@ Convolutional neural networks were always assumed to be shift invariant, until r
 
 In this work, we present <b>Adaptive Polyphase Sampling</b> (APS), an easy-to-implement non-linear downsampling scheme that completely gets rid of this problem. The resulting CNNs yield <b>100% consistency</b> in classification performance under shifts without any loss in accuracy. In fact, unlike prior works, the  networks exhibit perfect consistency even before training, making it the first approach that makes CNNs <i>truly shift invariant</i>.
 
-This repository contains the code to implement APS.
+This repository contains our code in PyTorch to implement APS.
 
 # Usage
 To run our implementation use the following command
