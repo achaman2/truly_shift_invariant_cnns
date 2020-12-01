@@ -1,4 +1,4 @@
-# Truly shift-invariant convolutional neural networks <a href = ''>[Paper]</a> 
+# Truly shift-invariant convolutional neural networks <a href = 'https://arxiv.org/pdf/2011.14214.pdf'>[Paper]</a> 
 <b>Authors:</b> Anadi Chaman and Ivan Dokmanić
 
 Convolutional neural networks were always assumed to be shift invariant, until recently when it was shown that the classification accuracy of a trained CNN can take a serious hit with merely a 1-pixel shift in input image. One of the primary reasons for this problem is the use of downsampling (popularly known as stride) layers in the networks.
