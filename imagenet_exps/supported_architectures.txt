@@ -1,0 +1,10 @@
+The current implementation supports different variants of ResNet-18 architecture.
+
+LPF ResNet models: 
+'resnet18_lpf1', 'resnet18_lpf2', 'resnet18_lpf3', 'resnet18_lpf4', 'resnet18_lpf5'.
+
+APS ResNet models: 
+'resnet18_aps1', 'resnet18_aps2', 'resnet18_aps3', 'resnet18_aps4', 'resnet18_aps5'.
+
+'resnet18_lpf1' corresponds to baseline downsampling.
+
