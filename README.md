@@ -19,7 +19,7 @@ For training on multiple GPUs:
 cd imagenet_exps
 python3 main.py --out-dir OUT_DIR --arch resnet18_aps1 --seed 0 --data PATH-TO-DATASET --workers NUM_WORKERS --dist-url tcp://127.0.0.1:FREE-PORT --dist-backend nccl --multiprocessing-distributed --world-size 1 --rank 0
 ```
-```--arch``` is used to specify the architecture. To use ResNet18 with APS layer and blur filter of size j, pass resnet18_apsj as the argument to ```--arch```. List of currently supported network architectures are [here](/imagenet_exps/supported_architectures.txt).
+```--arch``` is used to specify the architecture. To use ResNet18 with APS layer and blur filter of size j, pass 'resnet18_apsj' as the argument to ```--arch```. List of currently supported network architectures are [here](/imagenet_exps/supported_architectures.txt).
 
 ```--circular_data_aug``` can be used to additionally train the networks with random circular shifts. 
 
