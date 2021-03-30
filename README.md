@@ -7,8 +7,8 @@ In this work, we present <b>Adaptive Polyphase Sampling</b> (APS), an easy-to-im
 
 This repository contains our code in PyTorch to implement APS.
 
-# Usage
-The following command runs our implementation on CIFAR-10 dataset
+# CIFAR-10 training
+The following command runs our implementation on CIFAR-10 dataset.
 
 ```
 cd cifar10_exps
@@ -16,8 +16,7 @@ python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consi
 ```
 ```--data_augmentation_flag``` can be used to additionally train the networks with randomly shifted images. FILTER_SIZE can take the values between 1 to 7. The list of CNN architectures currently supported can be found [here](supported_architectures.txt).
 
-
-
-
 The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
+
+# ImageNet training
 
