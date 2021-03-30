@@ -11,6 +11,7 @@ This repository contains our code in PyTorch to implement APS.
 The following command runs our implementation on CIFAR-10 dataset
 
 ```
+cd cifar10_exps
 python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consistency --seed_num 0 --device_id 0 --model_folder CURRENT_MODEL_DIRECTORY --results_root_path ROOT_DIRECTORY --dataset_path PATH-TO-DATASET
 ```
 ```--data_augmentation_flag``` can be used to additionally train the networks with randomly shifted images. FILTER_SIZE can take the values between 1 to 7. The list of CNN architectures currently supported can be found [here](supported_architectures.txt).
