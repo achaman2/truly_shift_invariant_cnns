@@ -559,10 +559,13 @@ def validate(val_loader, model, criterion, args):
                 },
                 commit=False)
 
-        print(' * Acc@1 {top1.avg:.3f} Acc@5 {top5.avg:.3f} Val-consistency {consist.avg:.3f}'
-              .format(top1=top1, top5=top5, consist = consist))
         
         if args.evaluate:
+
+            print(' * Acc@1 {top1.avg:.3f} Acc@5 {top5.avg:.3f} Val-consistency {consist.avg:.3f}'
+              .format(top1=top1, top5=top5, consist = consist))
+            
+
             f = open(args.out_dir+'/evaluate_result_final.txt', 'a')
             f.write( '\n * Acc@1 {top1.avg:.3f} Acc@5 {top5.avg:.3f} Val-consistency {consist.avg:.3f}'
               .format(top1=top1, top5=top5, consist = consist))
