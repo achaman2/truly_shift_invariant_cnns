@@ -8,7 +8,7 @@ In this work, we present <b>Adaptive Polyphase Sampling</b> (APS), an easy-to-im
 This repository contains our code in PyTorch to implement APS.
 
 # ImageNet training
-To train on ImageNet use the following commands (training and evaluation with circular shifts).
+To train ResNet-18 model with APS on ImageNet use the following commands (training and evaluation with circular shifts).
 ```
 cd imagenet_exps
 python3 main.py --out-dir OUT_DIR --arch resnet18_aps1 --seed 0 --data PATH-TO-DATASET
