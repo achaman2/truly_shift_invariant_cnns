@@ -1,7 +1,9 @@
 # Truly shift-invariant convolutional neural networks <a href = 'https://arxiv.org/pdf/2011.14214.pdf'>[Paper]</a> <a href = 'https://www.icloud.com/iclouddrive/0gyJb-RxZ6tCRGe91Ig09E0RA#cvpr_shift_invariant_cnns_poster'>[Poster]</a> <a href = "https://www.youtube.com/watch?v=l2jDxeaSwTs">[Video]</a>
 <b>Authors:</b> Anadi Chaman and Ivan Dokmanić
 
-Convolutional neural networks were always assumed to be shift invariant, until recently when it was shown that the classification accuracy of a trained CNN can take a serious hit with merely a 1-pixel shift in input image. One of the primary reasons for this problem is the use of downsampling (popularly known as stride) layers in the networks.
+Despite the presence of convolutions, popular CNN architectures are not shift invariant. For example, the performance of a CNN classifier can be impacted with a mere 1-pixel shift in its input. This is due to the presence of downsampling layers in the form of pooling/stride operations.
+
+![unstable_downsampling](https://user-images.githubusercontent.com/12958446/136464199-d858b4b5-3d09-43a3-9a33-eb6393e409db.png)
 
 In this work, we present <b>Adaptive Polyphase Sampling</b> (APS), an easy-to-implement non-linear downsampling scheme that completely gets rid of this problem. The resulting CNNs yield <b>100% consistency</b> in classification performance under shifts without any loss in accuracy. In fact, unlike prior works, the  networks exhibit perfect consistency even before training, making it the first approach that makes CNNs <i>truly shift invariant</i>.
 
