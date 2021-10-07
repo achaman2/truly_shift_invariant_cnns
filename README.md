@@ -1,15 +1,29 @@
-# Truly shift-invariant convolutional neural networks <a href = 'https://arxiv.org/pdf/2011.14214.pdf'>[Paper]</a> <a href = 'https://www.icloud.com/iclouddrive/0gyJb-RxZ6tCRGe91Ig09E0RA#cvpr_shift_invariant_cnns_poster'>[Poster]</a> <a href = "https://www.youtube.com/watch?v=l2jDxeaSwTs">[Video]</a>
+# Truly shift-invariant convolutional neural networks 
 <b>Authors:</b> Anadi Chaman and Ivan Dokmanić
 
 Despite the presence of convolutions, popular CNN architectures are not shift invariant. For example, the performance of a CNN classifier can be impacted with a mere 1-pixel shift in its input. This is due to the presence of downsampling layers in the form of pooling/stride operations.
 
 ![unstable_downsampling](https://user-images.githubusercontent.com/12958446/136464199-d858b4b5-3d09-43a3-9a33-eb6393e409db.png)
 
-In this work, we present <b>Adaptive Polyphase Sampling</b> (APS), an easy-to-implement non-linear downsampling scheme that completely gets rid of this problem. The resulting CNNs yield <b>100% consistency</b> in classification performance under shifts without any loss in accuracy. In fact, unlike prior works, the  networks exhibit perfect consistency even before training, making it the first approach that makes CNNs <i>truly shift invariant</i>.
+We propose **Adaptive Polyphase Sampling (APS)**, an easy-to-implement downsampling scheme that can enable perfect shift invariance without sacrificing performance. The key idea behind APS is that sampling can be done adaptively in an input-dependent manner. We show that by choosing the sampling grid that supports pixels with the highest norm, the result can be made stable to shifts.
 
+![aps](https://user-images.githubusercontent.com/12958446/136465122-7ff01247-52eb-453f-bbce-3b421a78bc67.png)
+
+We use APS to restore shift invariance in CNN classifiers and shift equivariance in U-Net used for image reconstruction.
+
+# Shift invariant CNN classifiers <a href = 'https://arxiv.org/pdf/2011.14214.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307076/cvpr_shift_invariant_cnns_poster.pdf'>[Poster]</a> <a href = "https://www.youtube.com/watch?v=l2jDxeaSwTs">[Video]</a>
+We replace the downsampling operations in pooling and strided convolutions with APS layers. Thereafter, a shift in the network's input always results in a shift in its feature maps. Global average pooling layers in the end, then enable perfect shift invariance. 
+
+With APS, the resulting CNNs are **provably 100% shift invariant** without any loss in classification performance. In fact, the networks exhibit perfect consistency even before training, making it the first approach that makes CNNs *truly shift-invariant*. 
+ 
+# Shift equivariant U-Net for image-to-image regression tasks <a href = 'https://arxiv.org/pdf/2105.04040.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307089/asilomar_poster_submission.pdf'>[Poster]</a> 
+To obtain shift equivariance in symmetric encoder-decoder architectures like U-Net, we propose adaptive polyphase upsampling (APS-U). With experiments on MRI and CT reconstruction tasks, we obtain state-of-the-art shift equivariance results without sacrificing on image reconstruction quality.
+
+# Instructions to train the networks
 This repository contains our code in PyTorch to implement APS.
 
-# ImageNet training
+**ImageNet training**
+
 To train ResNet-18 model with APS on ImageNet use the following commands (training and evaluation with circular shifts).
 ```
 cd imagenet_exps
@@ -27,7 +41,8 @@ python3 main.py --out-dir OUT_DIR --arch resnet18_aps1 --seed 0 --data PATH-TO-D
 
 Results are saved in OUT_DIR. 
 
-# CIFAR-10 training
+**CIFAR-10 training** 
+
 The following commands run our implementation on CIFAR-10 dataset.
 
 ```
