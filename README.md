@@ -15,12 +15,8 @@ We use APS to restore shift invariance in CNN classifiers and shift equivariance
 We replace the downsampling operations in pooling and strided convolutions with APS layers. Thereafter, a shift in the network's input always results in a shift in its feature maps. Global average pooling layers in the end then enable perfect shift invariance. 
 
 With APS, the resulting CNNs are **provably 100% shift invariant** without any loss in classification performance. In fact, the networks exhibit perfect consistency even before training, making it the first approach that makes CNNs *truly shift-invariant*. 
- 
-# Shift equivariant U-Net for image-to-image regression tasks <a href = 'https://arxiv.org/pdf/2105.04040.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307089/asilomar_poster_submission.pdf'>[Poster]</a> 
-To obtain shift equivariance in symmetric encoder-decoder architectures like U-Net, we propose adaptive polyphase upsampling (APS-U). With experiments on MRI and CT reconstruction tasks, we obtain state-of-the-art shift equivariance results without sacrificing on image reconstruction quality.
 
-# Instructions to train the networks
-This repository contains our code in PyTorch to implement APS.
+Below are the instructions to train models with APS using PyTorch.
 
 **ImageNet training**
 
@@ -52,4 +48,13 @@ python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consi
 ```--data_augmentation_flag``` can be used to additionally train the networks with randomly shifted images. FILTER_SIZE can take the values between 1 to 7. The list of CNN architectures currently supported can be found [here](/cifar10_exps/supported_architectures.txt).
 
 The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
+
+ 
+# Shift equivariant U-Net for image-to-image regression tasks <a href = 'https://arxiv.org/pdf/2105.04040.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307089/asilomar_poster_submission.pdf'>[Poster]</a> 
+To obtain shift equivariance in symmetric encoder-decoder architectures like U-Net, we propose adaptive polyphase upsampling (APS-U). With experiments on MRI and CT reconstruction tasks, we obtain state-of-the-art shift equivariance results without sacrificing on image reconstruction quality.
+
+
+
+
+
 
