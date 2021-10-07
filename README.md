@@ -12,7 +12,7 @@ We propose **Adaptive Polyphase Sampling (APS)**, an easy-to-implement downsampl
 We use APS to restore shift invariance in CNN classifiers and shift equivariance in U-Net used for image reconstruction.
 
 # Shift invariant CNN classifiers <a href = 'https://arxiv.org/pdf/2011.14214.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307076/cvpr_shift_invariant_cnns_poster.pdf'>[Poster]</a> <a href = "https://www.youtube.com/watch?v=l2jDxeaSwTs">[Video]</a>
-We replace the downsampling operations in pooling and strided convolutions with APS layers. Thereafter, a shift in the network's input always results in a shift in its feature maps. Global average pooling layers in the end, then enable perfect shift invariance. 
+We replace the downsampling operations in pooling and strided convolutions with APS layers. Thereafter, a shift in the network's input always results in a shift in its feature maps. Global average pooling layers in the end then enable perfect shift invariance. 
 
 With APS, the resulting CNNs are **provably 100% shift invariant** without any loss in classification performance. In fact, the networks exhibit perfect consistency even before training, making it the first approach that makes CNNs *truly shift-invariant*. 
  
