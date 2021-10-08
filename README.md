@@ -50,9 +50,8 @@ python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consi
 The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
 
  
-# Shift equivariant U-Net for image-to-image regression tasks <a href = 'https://arxiv.org/pdf/2105.04040.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307089/asilomar_poster_submission.pdf'>[Poster]</a> 
+# Shift equivariant U-Net for image-to-image regression tasks <a href = 'https://arxiv.org/pdf/2105.04040.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307089/asilomar_poster_submission.pdf'>[Poster]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7309651/shift_equivariant_unet_slides.pptx'>[Slides]</a> 
 To obtain shift equivariance in symmetric encoder-decoder architectures like U-Net, we propose adaptive polyphase upsampling (APS-U). With experiments on MRI and CT reconstruction tasks, we obtain state-of-the-art shift equivariance results without sacrificing on image reconstruction quality.
-
 
 
 
