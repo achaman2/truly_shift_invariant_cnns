@@ -72,7 +72,7 @@ To obtain shift equivariance in symmetric encoder-decoder architectures like U-N
  @inproceedings{Chaman_2021_equivariant,
 	title={Truly shift-equivariant convolutional neural networks with adaptive polyphase upsampling},
 	author={Chaman, Anadi and Dokmani{\'c}, Ivan},
-	booktitle={2021 55th Asilomar Conference on Signals, Systems, and Computers},
+	booktitle={55th Asilomar Conference on Signals, Systems, and Computers},
 	year={2021}
 }
 
