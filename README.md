@@ -3,6 +3,7 @@
 
 Despite the presence of convolutions, popular CNN architectures are not shift invariant. For example, the performance of a CNN classifier can be impacted with a mere 1-pixel shift in its input. This is due to the presence of downsampling layers in the form of pooling/stride operations.
 
+
 ![unstable_downsampling](https://user-images.githubusercontent.com/12958446/136464199-d858b4b5-3d09-43a3-9a33-eb6393e409db.png)
 
 We propose **Adaptive Polyphase Sampling (APS)**, an easy-to-implement downsampling scheme that can enable perfect shift invariance without sacrificing performance. The key idea behind APS is that sampling can be done adaptively in an input-dependent manner. We show that by choosing the sampling grid that supports pixels with the highest norm, the result can be made stable to shifts.
@@ -49,11 +50,33 @@ python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consi
 
 The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
 
+**Citation**
+```BibTeX
+@InProceedings{Chaman_2021_CVPR,
+    author    = {Chaman, Anadi and Dokmanic, Ivan},
+    title     = {Truly Shift-Invariant Convolutional Neural Networks},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2021},
+    pages     = {3773-3783}
+}
+```
+
  
 # Shift equivariant U-Net for image-to-image regression tasks <a href = 'https://arxiv.org/pdf/2105.04040.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307089/asilomar_poster_submission.pdf'>[Poster]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7309651/shift_equivariant_unet_slides.pptx'>[Slides]</a> 
 To obtain shift equivariance in symmetric encoder-decoder architectures like U-Net, we propose adaptive polyphase upsampling (APS-U). With experiments on MRI and CT reconstruction tasks, we obtain state-of-the-art shift equivariance results without sacrificing on image reconstruction quality.
 
+**Citation**
+```BibTeX
 
+ @inproceedings{Chaman_2021_equivariant,
+	title={Truly shift-equivariant convolutional neural networks with adaptive polyphase upsampling},
+	author={Chaman, Anadi and Dokmani{\'c}, Ivan},
+	booktitle={2021 55th Asilomar Conference on Signals, Systems, and Computers},
+	year={2021}
+}
+
+```
 
 
 
