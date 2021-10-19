@@ -3,8 +3,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from my_models.circular_pad_layer import circular_pad
-from my_models.unet_lpf.blurpool import BlurPool
+from unet_models.circular_pad_layer import circular_pad
+from unet_models.unet_lpf.blurpool import BlurPool
 
 
 class DoubleConv(nn.Module):

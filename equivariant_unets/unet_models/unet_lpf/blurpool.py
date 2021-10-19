@@ -4,7 +4,7 @@ import numpy as np
 import torch.nn as nn
 import torch.nn.functional as F
 
-from my_models.circular_pad_layer import circular_pad
+from unet_models.circular_pad_layer import circular_pad
 
 
 class BlurPool(nn.Module):

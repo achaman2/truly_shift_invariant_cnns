@@ -4,8 +4,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from my_models.circular_pad_layer import circular_pad
-from my_models.unet_aps.apspool import ApsDown, ApsUp, get_pad_layer
+from unet_models.circular_pad_layer import circular_pad
+from unet_models.unet_aps.apspool import ApsDown, ApsUp, get_pad_layer
 
 
 class DoubleConv(nn.Module):

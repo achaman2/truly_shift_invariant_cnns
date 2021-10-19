@@ -34,8 +34,8 @@ import sys
 
 sys.path.insert(1, '../')
 
-import my_models
-from my_models import unet_aps, unet_lpf, unet
+import unet_models
+from unet_models import unet_aps, unet_lpf, baseline_unet
 
 sys.path.insert(1, '../fastMRI/')
 import fastmri
@@ -363,7 +363,7 @@ def main_worker(gpu, ngpus_per_node, args):
 
 	
 	else: # baseline model
-		model = unet.__dict__[args.arch](**model_dict)
+		model = baseline_unet.__dict__[args.arch](**model_dict)
 
 	
 	distributed_bool = (args.distributed ==True)
