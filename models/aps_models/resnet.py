@@ -3,9 +3,9 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 # import torch.utils.model_zoo as model_zoo
-from models_imagenet.aps_models.apspool import ApsPool
+from models.aps_models.apspool import ApsPool
 
-from models_imagenet.circular_pad_layer import circular_pad
+from models.circular_pad_layer import circular_pad
 
 
 # import apspool, circular_pad_layer

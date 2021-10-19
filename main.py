@@ -27,9 +27,9 @@ import sys
 
 sys.path.insert(1, '../')
 
-import models_imagenet
-from models_imagenet import lpf_models
-from models_imagenet import aps_models
+import models
+from models import lpf_models
+from models import aps_models
 
 
 parser = argparse.ArgumentParser(description='PyTorch ImageNet Training and Evaluation with Circular Shifts and Padding.')

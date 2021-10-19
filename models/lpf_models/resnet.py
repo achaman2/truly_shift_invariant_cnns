@@ -4,8 +4,8 @@ import torch.nn as nn
 import torch.utils.model_zoo as model_zoo
 
 
-from models_imagenet.lpf_models.blurpool import BlurPool
-from models_imagenet.circular_pad_layer import circular_pad
+from models.lpf_models.blurpool import BlurPool
+from models.circular_pad_layer import circular_pad
 
 
 __all__ = ['ResNet', 'resnet18', 'resnet34', 'resnet50', 'resnet101',
