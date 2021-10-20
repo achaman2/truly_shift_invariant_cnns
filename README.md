@@ -65,21 +65,17 @@ For training on multiple GPUs:
 ```python
 python3 main.py --out-dir OUT_DIR --arch resnet18_aps1 --seed 0 --data PATH-TO-DATASET --workers NUM_WORKERS --dist-url tcp://127.0.0.1:FREE-PORT --dist-backend nccl --multiprocessing-distributed --world-size 1 --rank 0
 ```
-```--arch``` is used to specify the architecture. To use ResNet18 with APS layer and blur filter of size j, pass 'resnet18_apsj' as the argument to ```--arch```. List of currently supported network architectures are [here](/imagenet_exps/supported_architectures.txt). ```--circular_data_aug``` can be used to additionally train the networks with random circular shifts. 
-
-Results are saved in OUT_DIR. 
+```--arch``` is used to specify the architecture. To use ResNet18 with APS layer and blur filter of size j, pass 'resnet18_apsj' as the argument to ```--arch```. List of currently supported network architectures are [here](/imagenet_exps/supported_architectures.txt). ```--circular_data_aug``` can be used to additionally train the networks with random circular shifts. Results are saved in OUT_DIR. 
 
 **CIFAR-10 training** 
 
 The following commands run our implementation on CIFAR-10 dataset.
 
-```
+```python
 cd cifar10_training
-python3 main.py --arch 'resnet18_aps' --filter_size FILTER_SIZE --validate_consistency --seed_num 0 --device_id 0 --model_folder CURRENT_MODEL_DIRECTORY --results_root_path ROOT_DIRECTORY --dataset_path PATH-TO-DATASET
+python3 main.py --arch 'resnet18_aps' --filter_size j --validate_consistency --seed_num 0 --device_id 0 --model_folder CURRENT_MODEL_DIRECTORY --results_root_path ROOT_DIRECTORY --dataset_path PATH-TO-DATASET
 ```
-```--data_augmentation_flag``` can be used to additionally train the networks with randomly shifted images. FILTER_SIZE can take the values between 1 to 7. The list of CNN architectures currently supported can be found [here](/cifar10_exps/supported_architectures.txt).
-
-The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
+```--data_augmentation_flag``` can be used to additionally train the networks with randomly shifted images. Filter size ```j``` can take the values between 1 to 7. The list of CNN architectures currently supported can be found [here](/cifar10_exps/supported_architectures.txt). The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
 
 
 
@@ -87,15 +83,16 @@ The results are saved in the path: ROOT_DIRECTORY/CURRENT_MODEL_DIRECTORY/
 ### Shift equivariant U-Net for image-to-image regression tasks <a href = 'https://arxiv.org/pdf/2105.04040.pdf'>[Paper]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7307089/asilomar_poster_submission.pdf'>[Poster]</a> <a href = 'https://github.com/achaman2/truly_shift_invariant_cnns/files/7309651/shift_equivariant_unet_slides.pptx'>[Slides]</a> 
 To obtain shift equivariance in symmetric encoder-decoder architectures like U-Net, we propose adaptive polyphase upsampling (APS-U). With experiments on MRI and CT reconstruction tasks, we obtain state-of-the-art shift equivariance results without sacrificing on image reconstruction quality.
 
-**FastMRI training**
+**Training shift equivariant U-Net on FastMRI dataset**
 
 To train U-Net model with APS on fastMRI dataset use the following commands (training and evaluation with circular shifts).
 ```python
 cd equivariant_unet_training/mri_reconstruction
 python3 main_mri.py --arch UNet_4down_aps --out-dir OUT_DIR --data PATH-TO-FASTMRI-DATASET 
 ```
+**Training on LoDoPaB-CT dataset**
 
-To train a U-Net on LoDoPaB-CT dataset for the CT reconstruction
+To train a U-Net on LoDoPaB-CT dataset for CT reconstruction task
 ```python
 cd equivariant_unet_training/ct_reconstruction
 python3 main_ct.py --arch UNet_4down_aps --out-dir OUT_DIR --data PATH-TO-CT-DATASET  
