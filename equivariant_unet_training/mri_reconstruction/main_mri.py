@@ -34,11 +34,10 @@ import sys
 
 sys.path.insert(1, '../')
 sys.path.insert(1, '../../')
-sys.path.insert(1, '../fastMRI/')
 
 
 import models
-from models import baseline_unet
+from models.baseline_models import baseline_unet
 from models.aps_models import unet_aps
 from models.lpf_models import unet_lpf
 
