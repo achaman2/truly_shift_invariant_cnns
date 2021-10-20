@@ -33,11 +33,15 @@ import pickle
 import sys
 
 sys.path.insert(1, '../')
-
-import unet_models
-from unet_models import unet_aps, unet_lpf, baseline_unet
-
+sys.path.insert(1, '../../')
 sys.path.insert(1, '../fastMRI/')
+
+
+import models
+from models import baseline_unet
+from models.aps_models import unet_aps
+from models.lpf_models import unet_lpf
+
 
 import fastmri
 from fastmri.evaluate import psnr

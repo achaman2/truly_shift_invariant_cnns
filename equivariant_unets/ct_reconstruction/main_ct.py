@@ -28,9 +28,12 @@ from runstats import Statistics
 import pickle
 import sys
 sys.path.insert(1, '../')
+sys.path.insert(1, '../../')
 
-import unet_models
-from unet_models import unet_aps, unet_lpf, baseline_unet
+import models
+from models import baseline_unet
+from models.aps_models import unet_aps
+from models.lpf_models import unet_lpf
 
 from utils.load_lodopab_ct import get_dataloaders_ct
 
@@ -54,7 +57,7 @@ parser.add_argument('-ep', '--epochs', default=20, type=int, metavar='N',
 					help='number of total epochs to run')
 parser.add_argument('--start-epoch', default=0, type=int, metavar='N',
 					help='manual epoch number (useful on restarts)')
-parser.add_argument('-b', '--batch-size', default=64, type=int,
+parser.add_argument('-b', '--batch-size', default=8, type=int,
 					metavar='N',
 					help='mini-batch size, this is the total '
 						 'batch size of all GPUs on the current node when '
